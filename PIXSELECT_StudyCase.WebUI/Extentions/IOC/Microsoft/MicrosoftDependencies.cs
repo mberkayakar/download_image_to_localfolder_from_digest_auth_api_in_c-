@@ -9,8 +9,8 @@ namespace Northwind.Business.IOC.Microsoft
     {
         public static void AddCustomDependencies(this IServiceCollection services)
         {
-            services.AddScoped<IUserService, UserManager>();
-            services.AddScoped<IDeviceService, DeviceManager>();
+            services.AddTransient<IUserService, UserManager>();
+            services.AddTransient<IDeviceService, DeviceManager>();
         }
     }
 }

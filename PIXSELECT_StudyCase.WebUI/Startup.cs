@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Northwind.Business.IOC.Microsoft;
+using PIXSELECT_StudyCase.WebUI.Services.Abstract;
 
 namespace PIXSELECT_StudyCase.WebUI
 {
@@ -25,7 +26,7 @@ namespace PIXSELECT_StudyCase.WebUI
             {
                 opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
-
+    
 
         }
 

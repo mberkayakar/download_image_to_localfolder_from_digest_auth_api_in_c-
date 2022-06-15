@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PIXSELECT_StudyCase.WebUI.Models;
 using PIXSELECT_StudyCase.WebUI.Services.Abstract;
 using System.Security.Cryptography;
 using System.Text;
@@ -23,10 +24,10 @@ namespace PIXSELECT_StudyCase.WebUI.Controllers
         }
 
 
-        [HttpGet("login")]
-        public IActionResult Login([FromQuery] string username ,string password)
+        [HttpPost("login")]
+        public IActionResult Login([FromBody] UserModel user)
         {
-            var model = _userservice.LoginMethod(username, password);
+            var model = _userservice.LoginMethod(user.username, user.password);
             if (string.IsNullOrEmpty(model))
                 return NotFound();
             
@@ -41,8 +42,8 @@ namespace PIXSELECT_StudyCase.WebUI.Controllers
 
             if (!string.IsNullOrEmpty(sorgu))
             {
-                
-                return Ok();
+                var model = _deviceservice.GetSnapShotandGetAdress(sorgu);
+                return Ok("Resim: \n\n "+model+" \n\n yoluna kaydedilmiştir.");
             }
             return BadRequest("İstek için bir adet md5 kodu giriniz.");
 

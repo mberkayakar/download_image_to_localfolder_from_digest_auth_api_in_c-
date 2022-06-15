@@ -22,3 +22,9 @@ C:\Users\mberk\OneDrive\Masaüstü\PIXSELECT_StudyCase\PIXSELECT_StudyCase.WebUI
 C:\Users\mberk\OneDrive\Masaüstü\PIXSELECT_StudyCase\PIXSELECT_StudyCase.WebUI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\mberk\OneDrive\Masaüstü\PIXSELECT_StudyCase\PIXSELECT_StudyCase.WebUI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\mberk\OneDrive\Masaüstü\PIXSELECT_StudyCase\PIXSELECT_StudyCase.WebUI\obj\Debug\netcoreapp3.1\PIXSELECT_StudyCase.WebUI.csproj.CopyComplete
+C:\Users\mberk\OneDrive\Masaüstü\PIXSELECT_StudyCase\PIXSELECT_StudyCase.WebUI\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\mberk\OneDrive\Masaüstü\PIXSELECT_StudyCase\PIXSELECT_StudyCase.WebUI\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\mberk\OneDrive\Masaüstü\PIXSELECT_StudyCase\PIXSELECT_StudyCase.WebUI\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\mberk\OneDrive\Masaüstü\PIXSELECT_StudyCase\PIXSELECT_StudyCase.WebUI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\mberk\OneDrive\Masaüstü\PIXSELECT_StudyCase\PIXSELECT_StudyCase.WebUI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\mberk\OneDrive\Masaüstü\PIXSELECT_StudyCase\PIXSELECT_StudyCase.WebUI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll

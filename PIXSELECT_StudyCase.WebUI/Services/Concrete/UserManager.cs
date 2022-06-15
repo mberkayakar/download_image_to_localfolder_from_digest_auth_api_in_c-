@@ -10,15 +10,37 @@ namespace PIXSELECT_StudyCase.WebUI.Services.Concrete
     public class UserManager : IUserService
     {
 
-        private readonly IDeviceService _deviceService;
-        public UserManager(IDeviceService deviceService)
-        {
-            _deviceService = deviceService;
-        }
+       
 
-        public GetUserİnformation GetUserİnformation(string username, string password)
+        public GetUserİnformation GetUserİnformation(string hash)
         {
-            throw new NotImplementedException();
+
+            if (!string.IsNullOrEmpty(hash))
+            {
+                try
+                {
+                    var userkey = VirtualDataBase.Userİnformation[hash];
+                    GetUserİnformation user = new GetUserİnformation();
+                    user.UserName = userkey.username;
+                    user.Password = userkey.password;
+                    user.HashCode = hash;
+                    if (userkey == null)
+                    {
+                        throw new ArgumentException("Not Found User İn DataBase");
+                    }
+                    return user;
+                }
+                catch (Exception EX)
+                {
+
+                    return null;
+
+                }
+                
+            }
+            throw new ArgumentException("Not Found Hash İn Parameters");
+
+
         }
 
         public string LoginMethod(string username, string password)
@@ -38,5 +60,7 @@ namespace PIXSELECT_StudyCase.WebUI.Services.Concrete
             
             return model;
         }
+
+        
     }
 }

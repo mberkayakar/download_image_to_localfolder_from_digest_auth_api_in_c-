@@ -14,7 +14,7 @@ namespace PIXSELECT_StudyCase.WebUI.VirtaulDataBase
 
         public static Dictionary<string, UserModel> Userİnformation = new Dictionary<string, UserModel>
         {
-            ["bcca755a8f221f8ee83bd05e52b11f29"] = new UserModel() { Username = "test", Password = "test?123" },
+            ["bcca755a8f221f8ee83bd05e52b11f29"] = new UserModel() { username = "test", password = "test?123" },
 
         };
 
