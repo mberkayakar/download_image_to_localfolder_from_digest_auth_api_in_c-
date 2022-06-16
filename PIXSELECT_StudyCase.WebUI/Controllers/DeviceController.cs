@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PIXSELECT_StudyCase.WebUI.Entities.ErrorModel;
 using PIXSELECT_StudyCase.WebUI.Models;
 using PIXSELECT_StudyCase.WebUI.Services.Abstract;
+using System;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -27,6 +29,7 @@ namespace PIXSELECT_StudyCase.WebUI.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] UserModel user)
         {
+          
             var model = _userservice.LoginMethod(user.username, user.password);
             if (string.IsNullOrEmpty(model))
                 return NotFound();
@@ -49,12 +52,7 @@ namespace PIXSELECT_StudyCase.WebUI.Controllers
 
         }
 
-
-
-
-
-
-
+         
 
     }
 }

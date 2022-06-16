@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Northwind.Business.IOC.Microsoft;
-using PIXSELECT_StudyCase.WebUI.Services.Abstract;
+using PIXSELECT_StudyCase.WebUI.Extentions.ErrorHandler;
 
 namespace PIXSELECT_StudyCase.WebUI
 {
@@ -37,6 +37,12 @@ namespace PIXSELECT_StudyCase.WebUI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+
+
+
+            // COSTUME ERROR EXCEPTİON SÜRECİ İÇİN TANIMALNMIŞ BİR YAPIDIR.
+            app.ConfigureExceptionandler();
 
             app.UseHttpsRedirection();
 

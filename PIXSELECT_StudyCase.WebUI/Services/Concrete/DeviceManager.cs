@@ -1,4 +1,5 @@
-﻿using PIXSELECT_StudyCase.WebUI.Helper.Security;
+﻿using PIXSELECT_StudyCase.WebUI.Entities.ErrorModel;
+using PIXSELECT_StudyCase.WebUI.Helper.Security;
 using PIXSELECT_StudyCase.WebUI.Models;
 using PIXSELECT_StudyCase.WebUI.Services.Abstract;
 using System;
@@ -31,9 +32,10 @@ namespace PIXSELECT_StudyCase.WebUI.Services.Concrete
 
                     }
                 }
-            }
+                throw new NotFoundError("Bu Hash bilgisine ait sistemde kayıtlı bir user bilgisne rastlanmadı ");
 
-            return null;
+            }
+            throw new NotFoundError("Bir Hash Bulunamadı. ");
 
 
         }

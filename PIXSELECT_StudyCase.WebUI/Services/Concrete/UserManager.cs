@@ -1,4 +1,5 @@
 ﻿using PIXSELECT_StudyCase.WebUI.Entities.DTO.UserDto;
+using PIXSELECT_StudyCase.WebUI.Entities.ErrorModel;
 using PIXSELECT_StudyCase.WebUI.Helper.Security;
 using PIXSELECT_StudyCase.WebUI.Services.Abstract;
 using PIXSELECT_StudyCase.WebUI.VirtaulDataBase;
@@ -45,22 +46,32 @@ namespace PIXSELECT_StudyCase.WebUI.Services.Concrete
 
         public string LoginMethod(string username, string password)
         {
-            if (String.IsNullOrEmpty(username))
-                throw new ArgumentException("Username Bilgisi bulunamadı");
-            if (String.IsNullOrEmpty(password))
-                throw new ArgumentException("Password Bilgisi bulunamadı");
 
-            var model = EncriptedText.CreateMD5Generator(username + " " + password);
-            var userkey = VirtualDataBase.Userİnformation[model];
-            
-            if (userkey == null)
+             
+                if (String.IsNullOrEmpty(username))
+                    throw new NotFoundError("Username Bilgisi bulunamadı ");
+                if (String.IsNullOrEmpty(password))
+                    throw new NotFoundError("Password Bilgisi bulunamadı");
+
+                var model = EncriptedText.CreateMD5Generator(username + " " + password);
+
+            try
             {
-                throw new ArgumentException("Not Found User İn DataBase");
-            }
-            
-            return model;
-        }
+                var userkey = VirtualDataBase.Userİnformation[model];
 
-        
-    }
+                if (userkey == null)
+                {
+                    throw new NotFoundError("Not Found User İn DataBase");
+                }
+
+                return model;
+
+            }
+            catch (Exception)
+            {
+                throw new NotFoundError("Sistemde Bu şifre ve kullanıcı id sine ait bir kayıt bulunamadı ");
+            }
+            }
+           
+        }
 }
